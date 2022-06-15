@@ -12,7 +12,7 @@
 
 # credentials 
 
-/src/Credentials
+
 
 # profiling files
 chrome-profiler-events*.json
