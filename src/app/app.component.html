@@ -6,11 +6,16 @@
 
         <div class="col-md-4">
             <div *ngIf="!connected">
-                <label class="badge badge-danger"> You are not connected </label>
+                <label class="badge badge-pill badge-danger"> You are not connected </label>
             </div>
 
+            <div *ngIf="!connected">
+                <label class="badge badge-pill badge-warning"> {{ message }}</label>
+            </div>
+
+
             <div *ngIf="connected">
-                <label class="badge badge-success"> You are connected </label>
+                <label class="badge badge-pill badge-success"> You are connected </label>
             </div>
 
         </div>

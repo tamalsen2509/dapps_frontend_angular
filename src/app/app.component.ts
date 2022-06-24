@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   public sighnerAddress: any
 
   connected: boolean = false;
-
+  message: string = "";
 
 
   constructor() {
@@ -60,9 +60,11 @@ export class AppComponent implements OnInit {
 
 
     this.signer = provider.getSigner();
+
     if (await this.signer.getChainId() !== 4) {
-      alert("Please change your network to rinkeby test net!")
+      this.message = "Please connect to Rinkeby Test Net"
     }
+
     if (await this.signer.getChainId() == 4) {
       this.connected = true
     }
