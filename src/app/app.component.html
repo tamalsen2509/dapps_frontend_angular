@@ -1,79 +1,70 @@
 <div class="container-fluid">
-    <div class="row pt-2">
-        <div class="col-md-8">
-            <h1 class="text-center">Welcome to Decentralize Bank</h1>
-        </div>
-
-        <div class="col-md-4">
-            <div *ngIf="!connected">
-                <label class="badge badge-pill badge-danger"> You are not connected </label>
+        <div class="row pt-5 bg-dark bg-gradient text-light">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center">
+                <h3>Welcome to Decentralize Bank</h3>
             </div>
 
-            <div *ngIf="!connected">
-                <label class="badge badge-pill badge-warning"> {{ message }}</label>
-            </div>
-
-
-            <div *ngIf="connected">
-                <label class="badge badge-pill badge-success"> You are connected </label>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="row pt-2">
-        <div class="col-md-4">
-            <label class="bg-light">Bank total Asset : {{ this.totalAssest }}</label>
-        </div>
-
-
-        <div class="col-md-4">
-            <label class="bg-light">{{this.sighnerAddress}} amont Deposited : {{this.userTotalAsset}} Matic</label>
-
-
-        </div>
-
-        <div class="col-md-4">
-            <label class="bg-light">{{this.sighnerAddress}} amont of yeild Token : {{this.userTotalToken}} Free</label>
-
-        </div>
-
-
-
-    </div>
-
-    <div class="row pt-4">
-        <div class="col-md-6">
-
-            <form [formGroup]="withDrawForm">
-                <div class="form-group">
-                    <label for="exampleInputEmail1"></label>
-                    <input type="email" class="form-control" id="Withdraw" formControlName="Withdraw">
-                    <small id="emailHelp" class="form-text text-muted">Please do not use your real Token!</small>
+            <div class="col-md-2 pb-2">
+                <div *ngIf="!connected">
+                    <label class="badge badge-pill badge-danger bg-danger"> You are not connected </label>
                 </div>
-
-                <button type="submit" class="btn btn-primary" (click)="withDraw()">Withdraw</button>
-            </form>
-
-
-        </div>
-
-        <div class="col-md-6">
-            <form [formGroup]="depositForm">
-                <div class="form-group">
-                    <label for="exampleInputEmail1"></label>
-                    <input type="email" class="form-control" id="Deposite" formControlName="Deposite">
-                    <small id="emailHelp" class="form-text text-muted">Please do not use your real Token!</small>
+                <div *ngIf="!connected">
+                    <label class="badge badge-pill badge-warning bg-warning"> {{ message }}</label>
                 </div>
-
-                <button type="submit" class="btn btn-primary" (click)="deposite()">Deposite</button>
-            </form>
-
-
-
+                <div *ngIf="connected">
+                    <label class="badge badge-pill badge-success bg-success"> You are connected </label>
+                </div>
+            </div>
         </div>
 
-    </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <label>Bank total Asset : {{ this.totalAssest }}</label>
+                                    <label>{{this.sighnerAddress}} amount Deposited : {{this.userTotalAsset}} Matic</label>
+                                    <label>{{this.sighnerAddress}} amount of yeild Token : {{this.userTotalToken}} Free</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <form [formGroup]="withDrawForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1"></label>
+                                            <input type="email" class="form-control" id="Withdraw"
+                                                formControlName="Withdraw">
+                                            <small id="emailHelp" class="form-text text-muted">Please do not use your
+                                                real
+                                                Token!</small>
+                                        </div>
 
-</div>
+                                        <button type="submit" class="btn btn-danger"
+                                            (click)="withDraw()">Withdraw</button>
+                                    </form>
+                                    <hr>
+                                    <form [formGroup]="depositForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1"></label>
+                                            <input type="email" class="form-control" id="Deposite"
+                                                formControlName="Deposite">
+                                            <small id="emailHelp" class="form-text text-muted">Please do not use your
+                                                real
+                                                Token!</small>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary"
+                                            (click)="deposite()">Deposite</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </div>
